@@ -48,10 +48,12 @@ module.exports = {
       entry: path.resolve(__dirname, 'src/scripts/sw.js')
     }),
     new WebpackPwaManifestPlugin({
+      filename: 'manifest.json',
       name: 'DAHARin Apps',
       short_name: 'DAHARin',
       description: 'DAHARin Apps is a website for showing restaurant recommendation. Here, you can find restaurant details and add it as your favorite!',
       start_url: '/index.html',
+      includeDirectory: 'true',
       display: 'standalone',
       background_color: '#ffffff',
       theme_color: 'black',
