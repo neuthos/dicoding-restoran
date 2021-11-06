@@ -77,8 +77,8 @@
   }
    
   .app-bar .app-bar__navigation.open {
-    left: -7.5px;
-    top: 72px;
+    left: 0px;
+    top: 50px;
     background-color: black;
   }
 
@@ -87,6 +87,7 @@
   }
    
   .app-bar .app-bar__navigation ul li a {
+    list-style-type: none;
     display: inline-block;
     text-decoration: none;
     color: white;

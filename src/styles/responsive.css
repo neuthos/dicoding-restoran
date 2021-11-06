@@ -63,6 +63,10 @@
 
   @media screen and (max-width:680px) {
 
+    .app-bar .app-bar__navigation {
+        height: 100vh;
+    }
+
     .restos {
         margin: 30px;
     }
