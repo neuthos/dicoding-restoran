@@ -74,6 +74,9 @@
         -o-border-radius: 20px;
     }
       
+    .hero {
+        text-align: left;
+    }
   }
    
   @media screen and (min-width: 800px) {
