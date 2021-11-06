@@ -63,10 +63,32 @@
 
   @media screen and (max-width:680px) {
 
+    .resto {
+        margin: 20px auto;
+        gap: 0px;
+    }
+
+    .resto__title {
+        background-color: white;
+        color: black;
+        margin:  10px 70px 20px 70px;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+    }
+
+    .resto__poster {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        -ms-border-radius: 0 !important;
+        -o-border-radius: 0 !important;
+}
+
     .resto__card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         padding: 40px;
+        margin: 20px 70px 20px 70px;
         overflow: hidden;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
