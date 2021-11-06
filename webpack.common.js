@@ -1,3 +1,4 @@
+const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
@@ -45,6 +46,23 @@ module.exports = {
     }),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js')
+    }),
+    new WebpackPwaManifestPlugin({
+      name: 'DAHARin Apps',
+      short_name: 'DAHARin',
+      description: 'DAHARin Apps is a website for showing restaurant recommendation. Here, you can find restaurant details and add it as your favorite!',
+      start_url: '/index.html',
+      display: 'standalone',
+      background_color: '#ffffff',
+      theme_color: 'black',
+      icons: [
+        {
+          src: path.resolve('src/public/faviconplate.png'),
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable'
+        }
+      ]
     })
   ]
 }

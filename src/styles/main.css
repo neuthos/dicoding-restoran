@@ -187,6 +187,9 @@
    
   .resto-item .resto-item__header .resto-item__header__poster {
     width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .resto-item .resto-item__header .resto-item__header__city {
