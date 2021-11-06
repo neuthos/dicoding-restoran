@@ -4,6 +4,7 @@ import { createRestoItemTemplate } from '../templates/template-creator'
 const AllResto = {
   async render () {
     return `
+        <hero-element></hero-element>
         <div class="content">
             <h2 class="content__heading">Find Restaurant</h2>
             <div id="restos" class="restos">

@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
     background-color: white;
     min-height: 100vh;
-    display: flex;
+    display: block;
     flex-direction: column;
   }
 
@@ -31,7 +31,7 @@
    
   .app-bar {
     padding: 8px 16px;
-    background-color: white;
+    background-color: black;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 10px;
@@ -52,6 +52,7 @@
     font-size: 18px;
     padding: 16px;
     cursor: pointer;
+    color: white;
   }
    
   .app-bar .app-bar__brand {
@@ -60,7 +61,7 @@
   }
    
   .app-bar .app-bar__brand h1 {
-    color: #345B63;
+    color: white;
     font-size: 22px;
     user-select: none;
   }
@@ -78,7 +79,7 @@
   .app-bar .app-bar__navigation.open {
     left: -7.5px;
     top: 72px;
-    background-color: #3f727c;
+    background-color: black;
   }
 
   .app-bar .app-bar__navigation.open ul li a {
@@ -88,7 +89,7 @@
   .app-bar .app-bar__navigation ul li a {
     display: inline-block;
     text-decoration: none;
-    color: #345B63;
+    color: white;
     padding: 20px 5px;
     margin-bottom: 5px;
     width: 100%;
@@ -135,8 +136,7 @@
   */
    
   main {
-    padding: 32px;
-    flex: 1;
+    display: block;
   }
    
   .content {
@@ -147,6 +147,7 @@
   .content .content__heading {
     font-weight: normal;
     text-align: center;
+    font-size: 40px;
   }
    
    
@@ -158,7 +159,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
-    margin: 32px 0;
+    margin: 50px;
   }
    
    
@@ -251,7 +252,7 @@
   */
    
   .resto {
-    margin: 0 auto;
+    margin: 100px auto;
     width: 100%;
     max-width: 800px;
     display: grid;
@@ -262,7 +263,6 @@
   .resto .resto__poster {
     align-items: center;
     width: 100%;
-    max-width: 400px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -271,20 +271,27 @@
 }
    
   .resto .resto__info h4 {
-    margin: 8px 0;
+    margin: 20px 0 20px 0;
   }
 
   .resto__title {
     text-align: center;
     margin: 10px;
-
-  }
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
 
   .detail-title {
     text-align: center;
     margin: 15px;
     padding: 5px;
-    background-color: #518d99c2;
+    background-color: rgb(83, 83, 83);
     color: white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -319,7 +326,7 @@
     position: fixed;
     bottom: 16px;
     right: 16px;
-    background-color: #db0000;
+    background-color: black;
     color: white;
     border: 0;
     border-radius: 50%;
@@ -332,12 +339,12 @@
 }
 
   footer {
-    padding: 16px;
-    background-color: #345B63;
+    padding: 25px;
+    background-color: black;
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: small;
+    font-size: 15px;
 }
 
 *::-webkit-scrollbar {

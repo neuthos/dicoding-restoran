@@ -34,13 +34,12 @@
     }
    
     .resto {
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 5fr 2fr;
     }
    
     .resto .resto__poster {
         grid-column-start: 1;
         grid-column-end: 2;
-        height: fit-content;
         align-items: center;
         justify-items: center;
     }
@@ -67,7 +66,7 @@
     .resto__card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 20px;
-        padding: 20px;
+        padding: 40px;
         overflow: hidden;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;

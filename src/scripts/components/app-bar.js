@@ -5,13 +5,12 @@ class appBar extends HTMLElement {
 
   render () {
     this.innerHTML = `
-    <a href="#findresto" class="skip-link">Find Restaurant</a>
     <header class="app-bar">
         <div class="app-bar__menu">
             <button id="hamburgerButton">☰</button>
         </div>
         <div class="app-bar__brand">
-            <h1>DAHARin Apps</h1>
+            <h1>DAHARin Apps 🍽️</h1>
         </div>
         <nav id="navigationDrawer" class="app-bar__navigation">
         <ul>
