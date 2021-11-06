@@ -1,0 +1,17 @@
+{
+    "name": "DAHARin Apps",
+    "short_name": "DAHARin",
+    "description": "DAHARin Apps is a website for showing restaurant recommendation. Here, you can find restaurant details and add it as your favorite!",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#345B63",
+    "icons": [
+      {
+        "src": "/faviconplate.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }
