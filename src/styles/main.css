@@ -256,10 +256,11 @@
     max-width: 800px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px 16px;
+    gap: 40px;
   }
    
   .resto .resto__poster {
+    align-items: center;
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
@@ -272,6 +273,43 @@
   .resto .resto__info h4 {
     margin: 8px 0;
   }
+
+  .resto__title {
+    text-align: center;
+    margin: 10px;
+
+  }
+
+  .detail-title {
+    text-align: center;
+    margin: 15px;
+    padding: 5px;
+    background-color: #518d99c2;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.review-detail, .overview-detail {
+  margin: 5px;
+}
+
+.authorReview {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.timeReview {
+  font-size: smaller;
+  color: #969696;
+}
+
+.contentReview {
+  margin-top: 10px;
+}
 
   /*
    Like

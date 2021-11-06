@@ -34,9 +34,17 @@
     }
    
     .resto {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 3fr 2fr;
     }
    
+    .resto .resto__poster {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        height: fit-content;
+        align-items: center;
+        justify-items: center;
+    }
+
     .resto .resto__title {
         grid-column-start: 1;
         grid-column-end: 3;
@@ -44,8 +52,29 @@
    
     .resto .resto__overview {
         grid-column-start: 1;
+        grid-column-end: 2;
+}
+
+    .resto .restaurantReview {
+        rid-column-start: 1;
         grid-column-end: 3;
     }
+
+  }
+
+  @media screen and (max-width:680px) {
+
+    .resto__card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        padding: 20px;
+        overflow: hidden;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+    }
+      
   }
    
   @media screen and (min-width: 800px) {
