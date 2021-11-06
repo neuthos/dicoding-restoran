@@ -25,6 +25,8 @@ const splash = document.querySelector('.splash')
 
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
-    splash.classList.add('display-none')
+    setTimeout(() => {
+      splash.classList.add('display-none')
+    }, 500)
   }
 }
