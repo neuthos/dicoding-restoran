@@ -23,8 +23,8 @@ window.addEventListener('load', () => {
 
 const splash = document.querySelector('.splash')
 
-document.addEventListener('DOMContentLoaded', (e) => {
-  setTimeout(() => {
+document.onreadystatechange = function () {
+  if (document.readyState === 'complete') {
     splash.classList.add('display-none')
-  }, 3000)
-})
+  }
+}
