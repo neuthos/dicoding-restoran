@@ -348,6 +348,7 @@
    
   .resto .resto__poster {
     align-items: center;
+    padding: 0;
     width: -webkit-fill-available;
     border-radius: 20px;
     -webkit-border-radius: 20px;

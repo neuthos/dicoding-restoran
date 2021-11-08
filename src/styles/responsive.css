@@ -90,14 +90,6 @@
         text-transform: uppercase;
         letter-spacing: 10px;
     }
-
-    .resto__poster {
-        border-radius: 0 !important;
-        -webkit-border-radius: 0 !important;
-        -moz-border-radius: 0 !important;
-        -ms-border-radius: 0 !important;
-        -o-border-radius: 0 !important;
-}   
       
     .hero {
         text-align: left;
