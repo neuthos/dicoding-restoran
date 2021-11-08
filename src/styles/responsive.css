@@ -65,6 +65,10 @@
 
   @media screen and (max-width:800px) {
 
+    .container {
+        max-width: 600px;
+    }
+
     .app-bar .app-bar__navigation {
         height: 100vh;
     }
