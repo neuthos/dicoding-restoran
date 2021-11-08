@@ -64,7 +64,8 @@ const createRestoDetailTemplate = (resto) => `
                 </div><!-- End row -->
             <div class="row">
               <div class="col-6">
-            <textarea type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
+                <input id="inputName" type="text" class="input" placeholder="Your name"></input>
+                <textarea type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
                 <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Review</button>
               </div><!-- End col -->
             </div><!--End Row -->
