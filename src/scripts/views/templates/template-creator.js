@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config'
 
 const createRestoDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
-  <img class="resto__poster" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" />
+  <img class="resto__poster resto__card" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" />
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
       <h4>
@@ -49,6 +49,27 @@ const createRestoDetailTemplate = (resto) => `
           </div>
       `).join('')}
     </div>
+  </div>
+
+  <div class="postReview resto__card">
+        <h3 class="detail-title">Post Review</h3>
+        <section id="app">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <div class="comment">
+              <p v-for="items in item" v-text="items"></p>
+                </div><!--End Comment-->
+                </div><!--End col -->
+                </div><!-- End row -->
+            <div class="row">
+              <div class="col-6">
+            <textarea type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
+                <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Review</button>
+              </div><!-- End col -->
+            </div><!--End Row -->
+          </div><!--End Container -->
+        </section><!-- end App -->
   </div>
 `
 
