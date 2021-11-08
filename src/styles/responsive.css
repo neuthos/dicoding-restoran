@@ -1,4 +1,4 @@
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 800px) {
     .app-bar {
         grid-template-columns: 1fr auto;
         padding: 8px 32px;
@@ -63,7 +63,7 @@
 
   }
 
-  @media screen and (max-width:680px) {
+  @media screen and (max-width:800px) {
 
     .app-bar .app-bar__navigation {
         height: 100vh;
@@ -76,6 +76,7 @@
     .resto {
         margin: 15px auto;
         gap: 0px;
+        max-width: 700px;
     }
 
     .resto__title {
@@ -92,9 +93,7 @@
         -moz-border-radius: 0 !important;
         -ms-border-radius: 0 !important;
         -o-border-radius: 0 !important;
-}
-
-    
+}   
       
     .hero {
         text-align: left;
