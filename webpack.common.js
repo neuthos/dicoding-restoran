@@ -1,5 +1,6 @@
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const path = require('path')
@@ -36,6 +37,12 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html'
     }),
+
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    }),
+
     new CopyWebpackPlugin({
       patterns: [
         {
