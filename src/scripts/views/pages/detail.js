@@ -39,7 +39,7 @@ const RestoDetail = {
         reviewerName.value = ''
         reviewerComment.value = ''
         console.log(sendReview)
-        setTimeout(window.location.reload(), 30000)
+        setTimeout(window.location.reload(), 3000)
       }
     })
 
