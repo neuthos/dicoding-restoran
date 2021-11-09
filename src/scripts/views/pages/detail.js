@@ -18,6 +18,30 @@ const RestoDetail = {
     const restoContainer = document.querySelector('#resto')
     restoContainer.innerHTML = createRestoDetailTemplate(resto)
 
+    const reviewerName = document.querySelector('#inputName')
+    const reviewerComment = document.querySelector('#inputReview')
+    const submitButton = document.querySelector('#submitReview')
+
+    submitButton.addEventListener('click', async () => {
+      console.log('clicked')
+      if (reviewerName.value === '' || reviewerComment.value === '') {
+        alert('Review content can\'t be empty')
+        reviewerName.value = ''
+        reviewerComment.value = ''
+      } else {
+        const review = {
+          id: resto.id,
+          name: reviewerName.value,
+          review: reviewerComment.value
+        }
+
+        const sendReview = await RestoDbSource.postReview(review)
+        reviewerName.value = ''
+        reviewerComment.value = ''
+        console.log(sendReview)
+      }
+    })
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: {

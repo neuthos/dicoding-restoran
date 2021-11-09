@@ -15,15 +15,20 @@ class RestoDbSource {
   }
 
   static async postReview (review) {
-    const response = await fetch(API_ENDPOINT.POST_REVIEW, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded' || 'application/json',
-        'X-Auth-Token': CONFIG.CONFIG_KEY
-      },
-      body: JSON.stringify(review)
-    })
-    return response
+    try {
+      const response = await fetch(API_ENDPOINT.POST_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded | application/json',
+          'X-Auth-Token': CONFIG.CONFIG_KEY
+        },
+        body: JSON.stringify(review)
+      })
+      return response
+    } catch (er) {
+      console.log(er)
+      return false
+    }
   }
 }
 
