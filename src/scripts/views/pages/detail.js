@@ -1,7 +1,8 @@
 import UrlParser from '../../routes/url-parser'
 import RestoDbSource from '../../data/restodb-source'
 import { createRestoDetailTemplate } from '../templates/template-creator'
-import LikeButtonInitiator from '../../utils/like-button-initiator'
+import LikeButtonPresenter from '../../utils/like-button-presenter'
+import FavoriteRestoIdb from '../../data/favorite-resto-idb'
 
 const RestoDetail = {
   async render () {
@@ -17,6 +18,19 @@ const RestoDetail = {
     const resto = await RestoDbSource.detailResto(url.id)
     const restoContainer = document.querySelector('#resto')
     restoContainer.innerHTML = createRestoDetailTemplate(resto)
+
+    LikeButtonPresenter.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestos: FavoriteRestoIdb,
+      resto: {
+        id: resto.id,
+        name: resto.name,
+        pictureId: resto.pictureId,
+        city: resto.city,
+        rating: resto.rating,
+        description: resto.description
+      }
+    })
 
     const reviewerName = document.querySelector('#inputName')
     const reviewerComment = document.querySelector('#inputReview')
@@ -40,18 +54,6 @@ const RestoDetail = {
         reviewerComment.value = ''
         console.log(sendReview)
         setTimeout(window.location.reload(), 3000)
-      }
-    })
-
-    LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      resto: {
-        id: resto.id,
-        name: resto.name,
-        pictureId: resto.pictureId,
-        city: resto.city,
-        rating: resto.rating,
-        description: resto.description
       }
     })
   }

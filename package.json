@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint ../restaurant-apps-pwa"
+    "lint": "eslint ../restaurant-apps-pwa",
+    "test": "karma start"
   },
   "keywords": [],
   "author": "",
@@ -20,11 +21,20 @@
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jasmine": "^4.1.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "file-loader": "^6.0.0",
     "html-hint": "^0.2.4",
     "html-webpack-plugin": "^4.3.0",
+    "jasmine-ajax": "^4.0.0",
+    "jasmine-core": "^3.5.0",
+    "karma": "^5.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-eslint": "^2.2.0",
+    "karma-jasmine": "^3.3.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^4.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
@@ -35,7 +45,7 @@
   },
   "dependencies": {
     "idb": "^6.1.5",
-    "regenerator-runtime": "^0.13.5",
+    "regenerator-runtime": "^0.13.9",
     "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
