@@ -11,9 +11,16 @@ class FavoriteRestoSearchPresenter {
     })
   }
 
-  _searchRestos (latestQuery) {
-    this._latestQuery = latestQuery
-    this._favoriteRestos.searchRestos(this._latestQuery)
+  async _searchRestos (latestQuery) {
+    this._latestQuery = latestQuery.trim()
+
+    let foundRestos
+    if (this.latestQuery.length > 0) {
+      foundRestos = await this._favoriteRestos.searchRestos(this.latestQuery)
+    } else {
+      foundRestos = await this._favoriteRestos.getAllRestos()
+    }
+    this._showFoundRestos(foundRestos)
   }
 
   get latestQuery () {
@@ -21,12 +28,21 @@ class FavoriteRestoSearchPresenter {
   }
 
   _showFoundRestos (restos) {
-    const html = restos.reduce(
-      (carry, resto) => carry.concat(`<li class="resto"><span class="resto__name">${resto.name || '-'}</span></li>`),
-      ''
-    )
+    let html
+
+    if (restos.length > 0) {
+      html = restos.reduce(
+        (carry, resto) => carry.concat(`<li class="resto"><span class="resto__name">${resto.name || '-'}</span></li>`),
+        ''
+      )
+    } else {
+      html = '<div class="restos__not__found">Resto not found</div>'
+    }
 
     document.querySelector('.restos').innerHTML = html
+
+    document.getElementById('resto-search-container')
+      .dispatchEvent(new Event('restos:searched:updated'))
   }
 }
 

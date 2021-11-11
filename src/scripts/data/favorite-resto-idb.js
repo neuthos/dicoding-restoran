@@ -30,7 +30,15 @@ const FavoriteRestoIdb = {
   },
 
   async searchRestos (query) {
+    return (await this.getAllRestos()).filter((resto) => {
+      const loweredCaseRestoName = (resto.name || '-').toLowerCase()
+      const jammedRestoName = loweredCaseRestoName.replace(/\s/g, '')
 
+      const loweredCaseQuery = query.toLowerCase()
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '')
+
+      return jammedRestoName.indexOf(jammedQuery) !== -1
+    })
   }
 }
 
