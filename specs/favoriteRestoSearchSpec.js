@@ -1,9 +1,11 @@
 import FavoriteRestoSearchPresenter from '../src/scripts/views/pages/liked-restos/favorite-resto-search-presenter'
 import FavoriteRestoIdb from '../src/scripts/data/favorite-resto-idb'
+import FavoriteRestoSearchView from '../src/scripts/views/pages/liked-restos/favorite-resto-search-view'
 
 describe('Searching restos', () => {
   let presenter
   let favoriteRestos
+  let view
 
   const searchRestos = (query) => {
     const queryElement = document.getElementById('query')
@@ -12,21 +14,15 @@ describe('Searching restos', () => {
   }
 
   const setRestoSearchContainer = () => {
-    document.body.innerHTML = `
-    <div id="resto-search-container">
-        <input id="query" type="text">
-        <div class="resto-result-container">
-            <ul class="restos">
-            </ul>
-        </div>
-    </div>
-    `
+    view = new FavoriteRestoSearchView()
+    document.body.innerHTML = view.getTemplate()
   }
 
   const constructPresenter = () => {
     favoriteRestos = spyOnAllFunctions(FavoriteRestoIdb)
     presenter = new FavoriteRestoSearchPresenter({
-      favoriteRestos
+      favoriteRestos,
+      view
     })
   }
 
@@ -47,35 +43,6 @@ describe('Searching restos', () => {
         .toHaveBeenCalledWith('resto a')
     })
 
-    it('should show the found restos', () => {
-      presenter._showFoundRestos([{ id: 1 }])
-      expect(document.querySelectorAll('.resto').length).toEqual(1)
-
-      presenter._showFoundRestos([{ id: 1, name: 'Satu' }, { id: 2, name: 'Dua' }])
-      expect(document.querySelectorAll('.resto').length).toEqual(2)
-    })
-
-    it('should show the name of the found restos', () => {
-      presenter._showFoundRestos([{ id: 1, name: 'Satu' }])
-      expect(document.querySelectorAll('.resto__name').item(0).textContent)
-        .toEqual('Satu')
-
-      presenter._showFoundRestos(
-        [{ id: 1, name: 'Satu' }, { id: 2, name: 'Dua' }]
-      )
-
-      const restoNames = document.querySelectorAll('.resto__name')
-      expect(restoNames.item(0).textContent).toEqual('Satu')
-      expect(restoNames.item(1).textContent).toEqual('Dua')
-    })
-
-    it('should show - for found resto without name', () => {
-      presenter._showFoundRestos([{ id: 1 }])
-
-      expect(document.querySelectorAll('.resto__name').item(0).textContent)
-        .toEqual('-')
-    })
-
     it('should show the restos found by Favorite Restos', (done) => {
       document.getElementById('resto-search-container')
         .addEventListener('restos:searched:updated', () => {
@@ -94,10 +61,10 @@ describe('Searching restos', () => {
 
     it('should show the name of the restos found by Favorite Restos', (done) => {
       document.getElementById('resto-search-container').addEventListener('restos:searched:updated', () => {
-        const restoTitles = document.querySelectorAll('.resto__name')
-        expect(restoTitles.item(0).textContent).toEqual('resto abc')
-        expect(restoTitles.item(1).textContent).toEqual('ada juga resto abcde')
-        expect(restoTitles.item(2).textContent).toEqual('ini juga boleh resto a')
+        const restoNames = document.querySelectorAll('.resto__name')
+        expect(restoNames.item(0).textContent).toEqual('resto abc')
+        expect(restoNames.item(1).textContent).toEqual('ada juga resto abcde')
+        expect(restoNames.item(2).textContent).toEqual('ini juga boleh resto a')
 
         done()
       })
@@ -106,6 +73,21 @@ describe('Searching restos', () => {
         { id: 111, name: 'resto abc' },
         { id: 222, name: 'ada juga resto abcde' },
         { id: 333, name: 'ini juga boleh resto a' }
+      ])
+
+      searchRestos('resto a')
+    })
+
+    it('should show - when the resto returned does not contain a name', (done) => {
+      document.getElementById('resto-search-container').addEventListener('restos:searched:updated', () => {
+        const restoNames = document.querySelectorAll('.resto__name')
+        expect(restoNames.item(0).textContent).toEqual('-')
+
+        done()
+      })
+
+      favoriteRestos.searchRestos.withArgs('resto a').and.returnValues([
+        { id: 444 }
       ])
 
       searchRestos('resto a')

@@ -17,6 +17,7 @@ const FavoriteRestoArray = {
   },
 
   putResto (resto) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!resto.hasOwnProperty('id')) {
       return
     }
@@ -50,6 +51,7 @@ const FavoriteRestoArray = {
 }
 
 describe('Favorite Resto Array Contract Test Implementation', () => {
+  // eslint-disable-next-line no-return-assign
   afterEach(() => favoriteRestos = [])
 
   itActsAsFavoriteRestoModel(FavoriteRestoArray)

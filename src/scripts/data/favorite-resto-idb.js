@@ -20,6 +20,7 @@ const FavoriteRestoIdb = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME)
   },
   async putResto (resto) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!resto.hasOwnProperty('id')) {
       return
     }
