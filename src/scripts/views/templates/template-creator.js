@@ -77,18 +77,18 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
-        <img class="resto-item__header__poster" alt="${resto.name}"
+        <img class="resto-item__header__poster" alt="${resto.name || '-'}"
             src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}">
             <div class="resto-item__header__city">
                 <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
             </div>
             <div class="resto-item__header__rating">
-                <p>⭐️<span class="resto-item__header__rating__score">${resto.rating}</span></p>
+                <p>⭐️<span class="resto-item__header__rating__score">${resto.rating || '-'}</span></p>
             </div>
     </div>
     <div class="resto-item__content">
-        <h3><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
-        <p>${resto.description}</p>
+        <h3 class="resto__name"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h3>
+        <p>${resto.description || '-'}</p>
     </div>
   </div>
   `

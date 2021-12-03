@@ -43,43 +43,30 @@ describe('Searching restos', () => {
         .toHaveBeenCalledWith('resto a')
     })
 
-    it('should show the restos found by Favorite Restos', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('restos:searched:updated', () => {
-          expect(document.querySelectorAll('.resto').length).toEqual(3)
-          done()
-        })
+    it('should show the restos found by Favorite Restos', () => {
+      presenter._showFoundRestos([{ id: '1' }])
+      expect(document.querySelectorAll('.resto-item').length).toEqual(1)
 
-      favoriteRestos.searchRestos.withArgs('resto a').and.returnValues([
-        { id: 111, name: 'resto abc' },
-        { id: 222, name: 'ada juga resto abcde' },
-        { id: 333, name: 'ini juga boleh resto a' }
-      ])
-
-      searchRestos('resto a')
+      presenter._showFoundRestos([{
+        id: '1',
+        name: 'satu'
+      }, {
+        id: '2',
+        name: 'dua'
+      }])
+      expect(document.querySelectorAll('.resto-item').length).toEqual(2)
     })
 
-    it('should show the name of the restos found by Favorite Restos', (done) => {
-      document.getElementById('resto-search-container').addEventListener('restos:searched:updated', () => {
-        const restoNames = document.querySelectorAll('.resto__name')
-        expect(restoNames.item(0).textContent).toEqual('resto abc')
-        expect(restoNames.item(1).textContent).toEqual('ada juga resto abcde')
-        expect(restoNames.item(2).textContent).toEqual('ini juga boleh resto a')
-
-        done()
-      })
-
-      favoriteRestos.searchRestos.withArgs('resto a').and.returnValues([
-        { id: 111, name: 'resto abc' },
-        { id: 222, name: 'ada juga resto abcde' },
-        { id: 333, name: 'ini juga boleh resto a' }
-      ])
-
-      searchRestos('resto a')
+    it('should show the name of the restos found by Favorite Restos', () => {
+      presenter._showFoundRestos([{
+        id: '1',
+        name: 'satu'
+      }])
+      expect(document.querySelectorAll('.resto__name').item(0).textContent).toEqual('satu')
     })
 
     it('should show - when the resto returned does not contain a name', (done) => {
-      document.getElementById('resto-search-container').addEventListener('restos:searched:updated', () => {
+      document.getElementById('restos').addEventListener('restos:updated', () => {
         const restoNames = document.querySelectorAll('.resto__name')
         expect(restoNames.item(0).textContent).toEqual('-')
 
@@ -119,12 +106,10 @@ describe('Searching restos', () => {
 
   describe('When no favorite restos could be found', () => {
     it('should show the empty message', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('restos:searched:updated', () => {
-          expect(document.querySelectorAll('.restos__not__found').length)
-            .toEqual(1)
-          done()
-        })
+      document.getElementById('restos').addEventListener('restos:updated', () => {
+        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(1)
+        done()
+      })
 
       favoriteRestos.searchRestos.withArgs('resto a').and.returnValues([])
 
@@ -132,8 +117,8 @@ describe('Searching restos', () => {
     })
 
     it('should not show any resto', (done) => {
-      document.getElementById('resto-search-container').addEventListener('restos:searched:updated', () => {
-        expect(document.querySelectorAll('.resto').length).toEqual(0)
+      document.getElementById('restos').addEventListener('restos:updated', () => {
+        expect(document.querySelectorAll('.resto-item').length).toEqual(0)
         done()
       })
 
