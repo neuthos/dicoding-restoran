@@ -320,8 +320,8 @@
     margin: 0 0 10px 0;
     padding: 25px;
     padding-left: 0;
-    text-transform: uppercase;
     letter-spacing: 2.5px;
+    font-weight: bold;
   }
    
   .resto-item .resto-item__content h3 a {
