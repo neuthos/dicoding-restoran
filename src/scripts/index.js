@@ -3,6 +3,7 @@ import '../styles/main.css'
 import '../styles/responsive.css'
 import '../scripts/components/app-bar.js'
 import '../scripts/components/hero-element'
+import '../../src/public/font-awesome.js'
 import App from './views/app'
 import swRegister from './utils/sw-register'
 
@@ -25,9 +26,7 @@ const splash = document.querySelector('.splash')
 
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
-    setTimeout(() => {
-      splash.classList.add('display-none')
-    }, 500)
+    splash.classList.add('display-none')
   }
 }
 
