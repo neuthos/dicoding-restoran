@@ -3,8 +3,8 @@ import CONFIG from '../../globals/config'
 const createRestoDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
   <picture>
-    <source media="(max-width: 600px)" srcset="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}">
-    <img class="resto__poster resto__card" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+    <source media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+    <img class="resto__poster resto__card" src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
   </picture>
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
@@ -81,8 +81,8 @@ const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
       <picture>
-        <source media="(max-width:600px)" srcset="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}">
-        <img class="resto-item__header__poster" alt="${resto.name || '-'}" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"></img>
+        <source media="(max-width:600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+        <img class="resto-item__header__poster" alt="${resto.name || '-'}" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
       </picture>
       <div class="resto-item__header__city">
         <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
