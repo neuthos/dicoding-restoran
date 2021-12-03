@@ -2,7 +2,10 @@ import CONFIG from '../../globals/config'
 
 const createRestoDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
-  <img class="resto__poster resto__card" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}">
+    <img class="resto__poster resto__card" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+  </picture>
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
       <h4>
@@ -77,18 +80,20 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
-        <img class="resto-item__header__poster" alt="${resto.name || '-'}"
-            src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}">
-            <div class="resto-item__header__city">
-                <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
-            </div>
-            <div class="resto-item__header__rating">
-                <p>⭐️<span class="resto-item__header__rating__score">${resto.rating || '-'}</span></p>
-            </div>
+      <picture>
+        <source media="(max-width:600px)" srcset="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}">
+        <img class="resto-item__header__poster" alt="${resto.name || '-'}" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"></img>
+      </picture>
+      <div class="resto-item__header__city">
+        <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
+      </div>
+      <div class="resto-item__header__rating">
+        <p>⭐️<span class="resto-item__header__rating__score">${resto.rating || '-'}</span></p>
+      </div>
     </div>
     <div class="resto-item__content">
-        <h3 class="resto__name"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h3>
-        <p>${resto.description || '-'}</p>
+      <h3 class="resto__name"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h3>
+      <p>${resto.description || '-'}</p>
     </div>
   </div>
   `
