@@ -6,10 +6,8 @@ class FavoriteRestoSearchView {
         <div id="resto-search-container">
           <input id="query" type="text">
           <h2 class="content__heading">Your Liked Resto</h2>
-            <div class="resto-search-container">
-              <div id="restos" class="restos">
-              
-              </div>
+            <div id="restos" class="restos">
+            
             </div>
         </div>
       `
