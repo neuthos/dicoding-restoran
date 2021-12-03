@@ -3,7 +3,12 @@ class FavoriteRestoShowPresenter {
     this._view = view
     this._favoriteRestos = favoriteRestos
 
-    this._favoriteRestos.getAllRestos()
+    this._showFavoriteRestos()
+  }
+
+  async _showFavoriteRestos () {
+    const restos = await this._favoriteRestos.getAllRestos()
+    this._displayRestos(restos)
   }
 
   _displayRestos (restos) {
