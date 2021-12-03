@@ -5,11 +5,12 @@ class FavoriteRestoSearchView {
     return `
         <div id="resto-search-container">
           <input id="query" type="text">
-          <h2 class="content__heading">Your Liked Resto</h2>
+          <h2 class="content__heading">Your Favorited Restaurant</h2>
             <div id="restos" class="restos">
-            
+    
             </div>
         </div>
+      </div>
       `
   }
 
