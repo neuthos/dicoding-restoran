@@ -38,6 +38,7 @@
     }
    
     .resto .resto__poster {
+        margin: 5em auto;
         grid-column-start: 1;
         grid-column-end: 2;
         align-items: center;
@@ -61,6 +62,12 @@
         grid-row-end: 5;
     }
 
+  }
+
+  @media screen and (max-width:600px) {
+    .resto .resto__poster {
+        border-radius: 0;
+    }
   }
 
   @media screen and (max-width:800px) {
