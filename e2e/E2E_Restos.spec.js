@@ -1,7 +1,7 @@
 const assert = require('assert')
 
 /* eslint-disable no-undef */
-Feature('Liking Restos')
+Feature('E2E_RestoTesting')
 
 Before(({ I }) => {
   I.amOnPage('/#/like')
@@ -87,4 +87,34 @@ Scenario('searching resto', async ({ I }) => {
     const variableName = await I.grabTextFrom(locate('.resto__name').at(index + 1))
     assert.strictEqual(name, variableName)
   })
+})
+
+Scenario('posting a blank review', ({ I }) => {
+  I.amOnPage('/')
+
+  I.seeElement('.resto__name a')
+  const firstResto = locate('.resto__name a').first()
+  I.click(firstResto)
+
+  I.fillField('#inputName', '')
+  I.fillField('#inputReview', '')
+
+  I.click('#submitReview')
+
+  I.seeInPopup('Review content can\'t be empty')
+})
+
+Scenario('posting a review', ({ I }) => {
+  I.amOnPage('/')
+
+  I.seeElement('.resto__name a')
+  const firstResto = locate('.resto__name a').first()
+  I.click(firstResto)
+
+  I.fillField('#inputName', 'TESTBOT')
+  I.fillField('#inputReview', 'Bip bop, TESBOT wants to eat something.')
+
+  I.click('#submitReview')
+
+  I.waitForResponse(response => response.url() === 'https://restaurant-api.dicoding.dev/review' && response.request().method() === 'POST' && response.status() === 201)
 })
