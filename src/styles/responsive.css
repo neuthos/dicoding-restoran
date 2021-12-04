@@ -82,6 +82,7 @@
 
     .restos {
         margin: 30px;
+        gap: 30px;
     }
 
     .resto {

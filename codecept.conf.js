@@ -1,8 +1,8 @@
-const { setHeadlessWhen } = require('@codeceptjs/configure');
+const { setHeadlessWhen } = require('@codeceptjs/configure')
 
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
-setHeadlessWhen(process.env.HEADLESS);
+setHeadlessWhen(process.env.HEADLESS)
 
 exports.config = {
   tests: 'e2e/**/*.spec.js',
@@ -11,7 +11,8 @@ exports.config = {
     Puppeteer: {
       url: 'http://localhost:8080',
       show: true,
-      windowSize: '1200x900'
+      windowSize: '1200x900',
+      waitForNavigation: 'networkidle0'
     }
   },
   include: {

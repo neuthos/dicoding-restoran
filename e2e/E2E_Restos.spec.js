@@ -31,6 +31,29 @@ Scenario('liking one resto', async ({ I }) => {
   assert.strictEqual(firstRestoName, likedRestoName)
 })
 
+Scenario('unliking one resto', async ({ I }) => {
+  I.see('Resto not found to be shown', '.resto-item__not__found')
+  I.amOnPage('/')
+
+  I.seeElement('.resto__name a')
+  const firstResto = locate('.resto__name a').first()
+
+  I.click(firstResto)
+  I.seeElement('#likeButton')
+  I.click('#likeButton')
+
+  I.amOnPage('/#/like')
+  I.seeElement('.resto-item')
+
+  I.seeElement('.resto__name a')
+  I.click(firstResto)
+  I.seeElement('#likeButton')
+  I.click('#likeButton')
+
+  I.amOnPage('/#/like')
+  I.see('Resto not found to be shown', '.resto-item__not__found')
+})
+
 Scenario('searching resto', async ({ I }) => {
   I.see('Resto not found to be shown', '.resto-item__not__found')
 

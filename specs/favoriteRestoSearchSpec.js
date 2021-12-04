@@ -107,7 +107,7 @@ describe('Searching restos', () => {
   describe('When no favorite restos could be found', () => {
     it('should show the empty message', (done) => {
       document.getElementById('restos').addEventListener('restos:updated', () => {
-        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(1)
+        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(3)
         done()
       })
 

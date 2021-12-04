@@ -4,11 +4,18 @@ class FavoriteRestoSearchView {
   getTemplate () {
     return `
         <div id="resto-search-container">
-          <input id="query" type="text">
           <h2 class="content__heading">Your Favorited Restaurant</h2>
-            <div id="restos" class="restos">
+          <div class="card">
+            <h2>Find Your Favorited Resto</h2>
+            <label class="input">
+              <input class="input__field" id="query" type="text" placeholder=" " />
+              <span class="input__label">Enter the resto name</span>
+            </label>
+          </div>
+            
+          <div id="restos" class="restos">
     
-            </div>
+          </div>
         </div>
       </div>
       `
@@ -39,7 +46,28 @@ class FavoriteRestoSearchView {
   }
 
   _getEmptyRestoTemplate () {
-    return '<div class="resto-item__not__found">Resto not found to be shown</div>'
+    return `
+      <div id="resto-search-container">
+          <div class="notfoundcard">
+            <div class="resto-item__not__found">Resto not found to be shown</div>
+          </div>
+            
+      </div>
+
+      <div id="resto-search-container">
+          <div class="notfoundcard">
+            <div class="resto-item__not__found">Make sure you are typing the right resto name.</div>
+          </div>
+            
+      </div>
+
+      <div id="resto-search-container">
+          <div class="notfoundcard">
+            <div class="resto-item__not__found">Or simply add some resto as your favorite.</div>
+          </div>
+            
+      </div>
+    `
   }
 }
 

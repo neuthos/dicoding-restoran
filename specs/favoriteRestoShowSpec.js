@@ -28,7 +28,7 @@ describe('Showing all favorite restos', () => {
 
     it('should show the information that no restos have been liked', (done) => {
       document.getElementById('restos').addEventListener('restos:updated', () => {
-        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(1)
+        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(3)
         done()
       })
 
