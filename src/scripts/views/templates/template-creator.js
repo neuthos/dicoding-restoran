@@ -5,7 +5,7 @@ const createRestoDetailTemplate = (resto) => `
   <picture>
     <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
     <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-    <img class="resto__poster resto__card" src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+    <img loading="lazy" class="resto__poster resto__card" src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
   </picture>
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
@@ -84,7 +84,7 @@ const createRestoItemTemplate = (resto) => `
       <picture>
         <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
         <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-        <img class="resto-item__header__poster" alt="${resto.name || '-'}" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
+        <img loading="lazy" class="resto-item__header__poster" alt="${resto.name || '-'}" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
       </picture>
       <div class="resto-item__header__city">
         <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
