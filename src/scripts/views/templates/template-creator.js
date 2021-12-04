@@ -84,7 +84,7 @@ const createRestoItemTemplate = (resto) => `
       <picture>
         <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
         <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-        <img src="../../../public/resto-placeholder.jpg" class="resto-item__header__poster lazyload" alt="${resto.name || '-'}" data-src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
+        <img src="resto-placeholder.jpg" class="resto-item__header__poster lazyload" alt="${resto.name || '-'}" data-src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
       </picture>
       <div class="resto-item__header__city">
         <p>📍<span class="resto-item__header__rating__score"> ${resto.city}</span></p>
