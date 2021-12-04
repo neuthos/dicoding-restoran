@@ -104,7 +104,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
-      maxSize: 70000,
+      maxSize: 50000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
@@ -119,6 +119,19 @@ module.exports = {
           minChunks: 2,
           priority: -20,
           reuseExistingChunk: true
+        },
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          // cacheGroupKey here is `commons` as the key of the cacheGroup
+          name (module, chunks, cacheGroupKey) {
+            const moduleFileName = module
+              .identifier()
+              .split('/')
+              .reduceRight((item) => item)
+            const allChunksNames = chunks.map((item) => item.name).join('~')
+            return `${cacheGroupKey}-${allChunksNames}-${moduleFileName}`
+          },
+          chunks: 'all'
         }
       }
     }

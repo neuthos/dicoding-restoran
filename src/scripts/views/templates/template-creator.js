@@ -5,7 +5,7 @@ const createRestoDetailTemplate = (resto) => `
   <picture>
     <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
     <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-    <img class="resto__poster resto__card lazyload" src="../../../public/resto-placeholder.jpg" data-src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+    <img class="resto__poster resto__card lazyload" src="resto-placeholder.jpg" data-src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
   </picture>
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
