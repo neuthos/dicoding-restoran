@@ -6,6 +6,7 @@ const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const webpack = require('webpack')
 const path = require('path')
 
@@ -63,7 +64,10 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
-          to: path.resolve(__dirname, 'dist/')
+          to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/**']
+          }
         }
       ]
     }),
@@ -108,7 +112,10 @@ module.exports = {
       ],
       overrideExtension: true
     }),
-    new webpack.ProgressPlugin()
+    new webpack.ProgressPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static'
+    })
   ],
   optimization: {
     splitChunks: {

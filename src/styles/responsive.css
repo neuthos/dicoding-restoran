@@ -68,6 +68,12 @@
     .resto .resto__poster {
         border-radius: 0;
     }
+
+    .hero__container {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../dist/images/hero-image_2-small.jpg");
+    }
   }
 
   @media screen and (max-width:800px) {

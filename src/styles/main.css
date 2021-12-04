@@ -194,17 +194,17 @@
  * Jumbotron
  */
 
-.hero {
+.hero__container {
     display: flex;
     align-items: center;
     min-height: 380px;
     width: 100%;
     text-align: center;
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../public/heros/hero-image_2.jpg");
     background-position: center;
     background-color: green;
+    background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../dist/images/hero-image_2-large.jpg");
 }
 
 .hero__inner {
