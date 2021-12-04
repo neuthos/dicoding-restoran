@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -92,7 +98,7 @@
 }
    
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'San Francisco',-apple-system, BlinkMacSystemFont,'Poppins', sans-serif;
     background-color: white;
     min-height: 100vh;
     display: block;
@@ -338,7 +344,7 @@
     text-decoration: none;
     padding: 25px;
     padding-left: 0;
-    font-size: larger;
+    font-size: 25px;
   }
    
   .resto-item .resto-item__content p {
