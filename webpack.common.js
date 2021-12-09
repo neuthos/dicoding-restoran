@@ -114,7 +114,8 @@ module.exports = {
     }),
     new webpack.ProgressPlugin(),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
+      analyzerMode: 'static',
+      openAnalyzer: false
     })
   ],
   optimization: {
