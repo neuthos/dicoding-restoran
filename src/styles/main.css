@@ -5,6 +5,13 @@
   font-display: swap;
 }
 
+.resto-item:empty{
+  height: 300px;
+  width: 520px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0;
+}
+
 * {
     padding: 0;
     margin: 0;
