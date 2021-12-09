@@ -3,8 +3,8 @@ import CONFIG from '../../globals/config'
 const createRestoDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
   <picture>
-    <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-    <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+    <source type="image/webp" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+    <source type="image/png" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
     <img class="resto__poster resto__card lazyload" src="resto-placeholder.jpg" data-src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
   </picture>
   <div class="resto__info resto__card">
@@ -82,8 +82,8 @@ const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
       <picture>
-        <source type="image/webp" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-        <source type="image/png" media="(max-width: 600px)" srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+        <source type="image/webp" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
+        <source type="image/png" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
         <img loading="lazy" src="resto-placeholder.jpg" class="resto-item__header__poster lazyload" alt="${resto.name || '-'}" data-src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}">
       </picture>
       <div class="resto-item__header__city">
