@@ -5,6 +5,11 @@
   font-display: swap;
 }
 
+body:empty {
+  height: 100%;
+  width: 100%;
+}
+
 .resto-item:empty{
   height: 300px;
   width: 520px;
