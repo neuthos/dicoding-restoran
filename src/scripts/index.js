@@ -42,3 +42,10 @@ if ('serviceWorker' in navigator) {
     })
   })
 }
+
+const skipToContent = document.querySelector('.skip-link')
+skipToContent.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    document.querySelector('#findresto').focus()
+  }
+})
