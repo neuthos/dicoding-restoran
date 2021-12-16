@@ -122,6 +122,9 @@
     .app-bar .app-bar__brand h1 {
         font-size: 2em;
     }
+    .restos {
+        margin: 50px;
+    }
   }
    
   @media screen and (min-width: 850px) {
