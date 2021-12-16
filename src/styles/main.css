@@ -407,7 +407,7 @@
 
 .review-detail, .overview-detail {
   margin: 5px;
-  max-height: 500px;
+  max-height: 600px;
   overflow: auto;
 }
 
