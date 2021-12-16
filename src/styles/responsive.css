@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 799px) {
     .app-bar {
         grid-template-columns: 1fr auto;
         padding: 8px 32px;
@@ -76,7 +76,7 @@
     }
   }
 
-  @media screen and (max-width:800px) {
+  @media screen and (max-width:799px) {
 
     .content {
         max-width: 600px;
@@ -118,7 +118,7 @@
     }
   }
    
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 799px) {
     .app-bar .app-bar__brand h1 {
         font-size: 2em;
     }
