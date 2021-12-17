@@ -1,6 +1,5 @@
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const WorkboxPlugin = require('workbox-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
@@ -55,11 +54,6 @@ module.exports = {
       filename: 'index.html'
     }),
 
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true
-    }),
-
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -71,9 +65,11 @@ module.exports = {
         }
       ]
     }),
+
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js')
     }),
+
     new WebpackPwaManifestPlugin({
       filename: 'manifest.json',
       name: 'DAHARin Apps',

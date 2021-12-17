@@ -152,10 +152,8 @@ body {
 }
 .app-bar .app-bar__navigation.open ul li a {
   color: #fff;
-  list-style-type: none;
 }
 .app-bar .app-bar__navigation ul li a {
-  list-style-type: none;
   display: inline-block;
   text-decoration: none;
   color: #fff;
@@ -516,6 +514,6 @@ button.primaryContained:hover {
   margin: 50px auto !important;
 }
 
-.fa-events-icons-failed, .fa-events-icons-ready {
-  background-color:#e5e5e5 !important
+ul {
+  list-style-type: none;
 }

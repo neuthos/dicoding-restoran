@@ -1,5 +1,4 @@
 import API_ENDPOINT from '../globals/api-endpoint'
-import CacheHelper from '../utils/cache-helper'
 
 class RestoDbSource {
   static async mainPage () {
@@ -24,7 +23,6 @@ class RestoDbSource {
         body: JSON.stringify(review)
       })
       alert('Review posted successfully')
-      CacheHelper.deleteOldCache()
       return response
     } catch {
       alert('Could not post review. Please try again later.')
