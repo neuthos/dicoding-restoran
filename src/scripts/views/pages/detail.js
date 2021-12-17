@@ -36,8 +36,7 @@ const RestoDetail = {
     const reviewerComment = document.querySelector('#inputReview')
     const submitButton = document.querySelector('#submitReview')
 
-    submitButton.addEventListener('click', async (event) => {
-      event.preventDefault()
+    submitButton.addEventListener('click', async () => {
       if (reviewerName.value === '' || reviewerComment.value === '') {
         alert('Review content can\'t be empty')
         reviewerName.value = ''
