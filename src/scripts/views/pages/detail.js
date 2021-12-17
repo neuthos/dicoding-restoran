@@ -36,8 +36,8 @@ const RestoDetail = {
     const reviewerComment = document.querySelector('#inputReview')
     const submitButton = document.querySelector('#submitReview')
 
-    submitButton.addEventListener('click', async () => {
-      console.log('clicked')
+    submitButton.addEventListener('click', async (event) => {
+      event.preventDefault()
       if (reviewerName.value === '' || reviewerComment.value === '') {
         alert('Review content can\'t be empty')
         reviewerName.value = ''
@@ -53,7 +53,7 @@ const RestoDetail = {
         reviewerName.value = ''
         reviewerComment.value = ''
         console.log(sendReview)
-        setTimeout(window.location.reload(), 3000)
+        location.reload(true)
       }
     })
   }

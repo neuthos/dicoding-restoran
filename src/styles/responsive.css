@@ -83,7 +83,7 @@
     }
 
     .app-bar .app-bar__navigation {
-        height: 100vh;
+        height: 200px;
     }
 
     .restos {
@@ -118,9 +118,12 @@
     }
   }
    
-  @media screen and (min-width: 799px) {
+  @media screen and (min-width: 750px) {
     .app-bar .app-bar__brand h1 {
         font-size: 2em;
+    }
+    .restos {
+        grid-template-columns: repeat(2, 1fr);
     }
   }
    

@@ -1,4 +1,5 @@
 import API_ENDPOINT from '../globals/api-endpoint'
+import CacheHelper from '../utils/cache-helper'
 
 class RestoDbSource {
   static async mainPage () {
@@ -14,14 +15,20 @@ class RestoDbSource {
   }
 
   static async postReview (review) {
-    const response = await fetch(API_ENDPOINT.POST_REVIEW, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(review)
-    })
-    return response
+    try {
+      const response = await fetch(API_ENDPOINT.POST_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(review)
+      })
+      alert('Review posted successfully')
+      CacheHelper.deleteOldCache()
+      return response
+    } catch {
+      alert('Could not post review. Please try again later.')
+    }
   }
 }
 
