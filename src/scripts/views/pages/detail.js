@@ -52,6 +52,7 @@ const RestoDetail = {
         reviewerName.value = ''
         reviewerComment.value = ''
         console.log(sendReview)
+        self.skipWaiting()
         location.reload(true)
       }
     })
