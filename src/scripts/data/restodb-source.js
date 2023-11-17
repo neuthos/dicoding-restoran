@@ -22,6 +22,7 @@ class RestoDbSource {
         },
         body: JSON.stringify(review)
       })
+      console.log(response)
       alert('Review posted successfully')
       return response
     } catch {

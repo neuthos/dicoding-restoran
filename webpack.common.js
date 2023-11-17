@@ -72,9 +72,9 @@ module.exports = {
 
     new WebpackPwaManifestPlugin({
       filename: 'manifest.json',
-      name: 'DAHARin Apps',
-      short_name: 'DAHARin',
-      description: 'DAHARin Apps is a website for showing restaurant recommendation. Here, you can find restaurant details and add it as your favorite!',
+      name: 'Alana Explore',
+      short_name: 'Alana',
+      description: 'Alana Explore adalah website restoran terbaik',
       start_url: '/index.html',
       includeDirectory: 'true',
       display: 'standalone',
@@ -82,7 +82,7 @@ module.exports = {
       theme_color: 'black',
       icons: [
         {
-          src: path.resolve('src/public/faviconplate.png'),
+          src: path.resolve('src/public/favicon-32x32.png'),
           sizes: '512x512',
           type: 'image/png',
           purpose: 'any maskable'

@@ -1,7 +1,7 @@
 import 'regenerator-runtime' /* for async await transpile */
-import '../styles/minified/main-min.css'
-import '../styles/minified/responsive-min.css'
-import '../styles/minified/style-min.scss'
+import '../styles/main.css'
+import '../styles/responsive.css'
+import '../styles/style.scss'
 import '../scripts/components/app-bar.js'
 import '../scripts/components/hero-element'
 import '../../src/public/font-awesome.js'

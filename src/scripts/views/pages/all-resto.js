@@ -15,10 +15,8 @@ const AllResto = {
   },
 
   async afterRender () {
-    // Fungsi ini akan dipanggil setelah render()
     const restos = await RestoDbSource.mainPage()
     const restoContainer = document.querySelector('#restos')
-    console.log(restos)
     restos.forEach((movie) => {
       restoContainer.innerHTML += createRestoItemTemplate(movie)
     })

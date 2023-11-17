@@ -1,11 +1,11 @@
 import CONFIG from '../../globals/config'
 
 const createRestoDetailTemplate = (resto) => `
-  <h2 class="resto__title">${resto.name}</h2>
+  <h2 class=" resto__title">${resto.name}</h2>
   <picture>
     <source type="image/webp" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
     <source type="image/png" media="(max-width: 600px)" data-srcset="${CONFIG.SMALL_IMAGE_URL}${resto.pictureId}">
-    <img class="resto__poster resto__card lazyload" src="resto-placeholder.jpg" data-src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+    <img class="resto__poster lazyload" src="resto-placeholder.jpg" data-src="${CONFIG.MEDIUM_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
   </picture>
   <div class="resto__info resto__card">
     <h3 class="detail-title">About</h3>
@@ -56,29 +56,24 @@ const createRestoDetailTemplate = (resto) => `
   </div>
 
   <div class="postReview resto__card">
-        <h3 class="detail-title">Post Review</h3>
-        <section id="app">
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-                <div class="comment">
-              <p v-for="items in item" v-text="items"></p>
-                </div><!--End Comment-->
-                </div><!--End col -->
-                </div><!-- End row -->
-            <div class="row">
-              <div class="col-6">
-                <input id="inputName" type="text" class="input" placeholder="Your name"></input>
-                <textarea id="inputReview" type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
-                <button id="submitReview" class='primaryContained'>Add Review</button>
-              </div><!-- End col -->
-            </div><!--End Row -->
-          </div><!--End Container -->
-        </section><!-- end App -->
+    <h3 class="detail-title">Post Review</h3>
+      <div class="container">
+        <div>
+            <div class="comment">
+          <p v-for="items in item" v-text="items"></p>
+            </div><!--End Comment-->
+            </div><!-- End row -->
+        <div>
+          <input id="inputName" type="text" class="input" placeholder="Your name"></input>
+          <textarea id="inputReview" type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
+          <button id="submitReview" class='primaryContained'>Add Review</button>
+        </div><!--End Row -->
+      </div>
   </div>
 `
 
 const createRestoItemTemplate = (resto) => `
+  <a href="${`/#/detail/${resto.id}`}">
   <div class="resto-item">
     <div class="resto-item__header">
       <picture>
@@ -94,10 +89,15 @@ const createRestoItemTemplate = (resto) => `
       </div>
     </div>
     <div class="resto-item__content">
-      <h3 class="resto__name"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h3>
+      <h3 class="resto__name">
+      
+        ${resto.name || '-'}
+        
+      </h3>
       <p>${resto.description || '-'}</p>
     </div>
   </div>
+  </a>
   `
 
 const createLikeRestoButtonTemplate = () => `

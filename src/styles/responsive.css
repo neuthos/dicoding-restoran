@@ -32,36 +32,6 @@
     .restos {
         grid-template-columns: 1fr 1fr;
     }
-   
-    .resto {
-        grid-template-columns: 5fr 3fr;
-    }
-   
-    .resto .resto__poster {
-        margin: 5em auto;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .resto .resto__title {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-   
-    .resto .resto__overview {
-        grid-column-start: 1;
-        grid-column-end: 2;
-}
-
-    .resto .restaurantReview {
-        rid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        grid-row-end: 5;
-    }
-
   }
 
   @media screen and (max-width:600px) {
